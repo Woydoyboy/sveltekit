@@ -1,0 +1,14 @@
+# Node / SvelteKit
+node_modules/
+.svelte-kit/
+build/
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Environment & OS
+.env
+.DS_Store

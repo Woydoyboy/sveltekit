@@ -27,6 +27,7 @@ from fastapi.middleware.cors import CORSMiddleware# imports security tool that r
 
 app = FastAPI()# creates an instance of fastapi.handles routing and incoming HTTP requests.
 
+# Allow CORS so SvelteKit (port 5173) can talk to Python (port 8000)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173"],

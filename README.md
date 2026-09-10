@@ -29,12 +29,17 @@ app = FastAPI()# creates an instance of fastapi.handles routing and incoming HTT
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],#connects to the frontend host
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-@app.get("/hello")
-def hello(name: str):
-    return {"message": f"Hello, {name}!"}
+count = 0
+
+@app.get("/api/greet")
+def read_greet(name: str = "World"):
+    global count
+    count += 1
+    return {"message": f"{count} Hello, {name} from Python!"}
 ```
